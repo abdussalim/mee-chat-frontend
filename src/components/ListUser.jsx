@@ -119,7 +119,7 @@ export default function ListUser({ selectReceiver, listChat }) {
               <div>
                 {listUser.data.length ? (
                   <>
-                    {listUser.data.map((user, index) => (
+                    {listUser.data.map((user) => (
                       <div key={user.id}>
                         {user.id !== localStorage.getItem("id") && (
                           <button

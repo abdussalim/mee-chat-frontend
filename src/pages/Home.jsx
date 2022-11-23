@@ -72,12 +72,6 @@ export default function Home() {
           receiver === response[0].sender_id ||
           receiver === response[0].receiver_id
         ) {
-          console.log(response[response.length - 1].date);
-          console.log(
-            new Date(response[response.length - 1].date)
-              .getTime()
-              .toLocaleString("en-US", "Asia/Jakarta")
-          );
           const dateNow = new Date()
             .getTime()
             .toLocaleString("en-US", "Asia/Jakarta")
@@ -90,8 +84,6 @@ export default function Home() {
             .split(",")
             .slice(3, 4)
             .toString();
-          console.log(dateNow);
-          console.log(dateChat);
           if (dateChat === (dateNow || dateNow + 1 || dateNow - 1)) {
             localStorage.setItem("notification", true);
             if (localStorage.getItem("notification") === "true") {

@@ -25,7 +25,7 @@ function TestChat() {
   const submit = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:5000/send-messages", {
+    await fetch(`${process.env.REACT_APP_API_URL}/send-messages`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
