@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Pusher from "pusher-js";
+import axios from "axios";
 
 function TestChat() {
   const [username, setUsername] = useState("username");
@@ -25,10 +26,9 @@ function TestChat() {
   const submit = async (e) => {
     e.preventDefault();
 
-    await fetch(`${process.env.REACT_APP_API_URL}/send-messages`, {
-      method: "POST",
+    await axios.post(`${process.env.REACT_APP_API_URL}/send-messages`, {
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+      data: JSON.stringify({
         id: localStorage.getItem("id"),
         username,
         message,
