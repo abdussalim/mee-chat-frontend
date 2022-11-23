@@ -26,14 +26,19 @@ function TestChat() {
   const submit = async (e) => {
     e.preventDefault();
 
-    await axios.post(`${process.env.REACT_APP_API_URL}/send-messages`, {
-      headers: { "Content-Type": "application/json" },
-      data: JSON.stringify({
+    await axios.post(
+      `${process.env.REACT_APP_API_URL}/send-messages`,
+      JSON.stringify({
         id: localStorage.getItem("id"),
         username,
         message,
       }),
-    });
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     setMessage("");
   };
