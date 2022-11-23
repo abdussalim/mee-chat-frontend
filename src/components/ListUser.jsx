@@ -48,7 +48,7 @@ export default function ListUser({ selectReceiver, listChat }) {
   return (
     <div className="left-menu col-4 col-md-3 p-4">
       <div className="d-block d-lg-flex justify-content-between">
-        <h3 className="color-blue fw-bold">Mee Chat</h3>
+        <h3 className="color-blue fw-bold">{process.env.REACT_APP_APP_NAME}</h3>
         <div className="dropdown">
           <div
             role="button"

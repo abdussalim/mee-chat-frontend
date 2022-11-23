@@ -150,6 +150,7 @@ export default function Home() {
       date: new Date(),
       chat: message,
     };
+
     socketio.emit("send-message", data);
 
     const payload = {
