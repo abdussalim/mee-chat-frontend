@@ -66,6 +66,10 @@ export default function Home() {
     const ENDPOINT = process.env.REACT_APP_API_URL;
 
     const socket = io(ENDPOINT, {
+      cors: {
+        origin: "*",
+        credentials: true,
+      },
       reconnection: true,
       reconnectionDelay: 500,
       reconnectionAttempts: 10,
