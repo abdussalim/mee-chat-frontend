@@ -1,7 +1,7 @@
 import "../assets/styles/home.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import io from "socket.io-client";
+import { io } from "socket.io-client";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ListUser from "../components/ListUser";
@@ -67,6 +67,7 @@ export default function Home() {
       reconnection: true,
       reconnectionDelay: 500,
       reconnectionAttempts: 10,
+      transports: ["websocket", "polling"],
     });
 
     socket.on("send-message-response", (response) => {
