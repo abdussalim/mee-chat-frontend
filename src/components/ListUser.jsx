@@ -13,7 +13,6 @@ export default function ListUser({ selectReceiver, listChat }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { listUser } = useSelector((state) => state);
-  // const [listChat, setListChat] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
