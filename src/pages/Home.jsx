@@ -1,7 +1,7 @@
 import "../assets/styles/home.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { io } from "socket.io-client";
+import io from "socket.io-client";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import ListUser from "../components/ListUser";
