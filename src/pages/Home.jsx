@@ -63,9 +63,9 @@ export default function Home() {
       alertPlaceholder.append(wrapper);
     };
 
-    const url = `wss://${process.env.REACT_APP_API_URL.split("//")[1]}`;
+    const ENDPOINT = process.env.REACT_APP_API_URL;
 
-    const socket = io(url, {
+    const socket = io(ENDPOINT, {
       reconnection: true,
       reconnectionDelay: 500,
       reconnectionAttempts: 10,
