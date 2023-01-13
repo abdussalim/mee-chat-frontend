@@ -148,13 +148,12 @@ export const editProfile = async (data, setErrors) => {
 };
 
 export const editPhoto = async (data, setErrors) => {
+  const id = localStorage.getItem("id");
+  const token = localStorage.getItem("token");
   try {
-    const token = localStorage.getItem("token");
-    const id = localStorage.getItem("id");
     await axios.put(`${process.env.REACT_APP_API_URL}/user/${id}/photo`, data, {
       headers: { "Content-Type": "multipart/form-data", token },
     });
-
     return true;
   } catch (error) {
     if (error.response) {
