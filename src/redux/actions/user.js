@@ -163,10 +163,10 @@ export const editPhoto = async (data, setErrors) => {
       } else {
         setErrors([{ msg: error.response.data.error }]);
       }
+      console.log(id);
     } else {
       setErrors([{ msg: error.message }]);
     }
-
     return false;
   }
 };

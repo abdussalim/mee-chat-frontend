@@ -1,12 +1,12 @@
+import Swal from "sweetalert2";
+import io from "socket.io-client";
 import "../assets/styles/home.css";
+import Chat from "../components/Chat";
+import Profile from "../components/Profile";
+import ListUser from "../components/ListUser";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import io from "socket.io-client";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import ListUser from "../components/ListUser";
-import Profile from "../components/Profile";
-import Chat from "../components/Chat";
 import { getDetailReceiver, getDetailUser } from "../redux/actions/user";
 
 export default function Home() {
