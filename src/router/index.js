@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
+import TestChat from "../pages/Testing";
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -39,6 +40,7 @@ export default function router() {
             }
           />
         </Route>
+
         <Route path="/register">
           <Route
             index
@@ -49,6 +51,7 @@ export default function router() {
             }
           />
         </Route>
+
         <Route path="/">
           <Route
             index
@@ -59,6 +62,18 @@ export default function router() {
             }
           />
         </Route>
+
+        <Route path="/test-chat">
+          <Route
+            index
+            element={
+              // <PublicRoute>
+              <TestChat />
+              // </PublicRoute>
+            }
+          />
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

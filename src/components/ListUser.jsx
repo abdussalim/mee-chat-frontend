@@ -13,7 +13,6 @@ export default function ListUser({ selectReceiver, listChat }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { listUser } = useSelector((state) => state);
-  // const [listChat, setListChat] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -48,7 +47,7 @@ export default function ListUser({ selectReceiver, listChat }) {
   return (
     <div className="left-menu col-4 col-md-3 p-4">
       <div className="d-block d-lg-flex justify-content-between">
-        <h3 className="color-blue fw-bold">Mee Chat</h3>
+        <h3 className="color-blue fw-bold">{process.env.REACT_APP_APP_NAME}</h3>
         <div className="dropdown">
           <div
             role="button"
@@ -119,7 +118,7 @@ export default function ListUser({ selectReceiver, listChat }) {
               <div>
                 {listUser.data.length ? (
                   <>
-                    {listUser.data.map((user, index) => (
+                    {listUser.data.map((user) => (
                       <div key={user.id}>
                         {user.id !== localStorage.getItem("id") && (
                           <button
