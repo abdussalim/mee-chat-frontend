@@ -127,6 +127,7 @@ export const editProfile = async (data, setErrors) => {
   try {
     const id = localStorage.getItem("id");
     const token = localStorage.getItem("token");
+
     await axios.put(`${process.env.REACT_APP_API_URL}/user/${id}`, data, {
       headers: { token },
     });

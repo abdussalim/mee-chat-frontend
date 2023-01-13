@@ -58,6 +58,7 @@ export default function Profile() {
   };
 
   const onSubmitPhoto = async () => {
+    const id = localStorage.getItem("id");
     document.getElementById("close").click();
 
     const formData = new FormData();
@@ -71,7 +72,6 @@ export default function Profile() {
     const editPhotoStatus = await editPhoto(formData, setErrors);
     if (editPhotoStatus) {
       createToast("Edit Photo Success", "success");
-      const id = localStorage.getItem("id");
       dispatch(getDetailUser(id, navigate, setPhotoIsLoading));
       setPhoto(null);
     }
